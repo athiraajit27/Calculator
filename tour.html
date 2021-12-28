@@ -1,25 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Kerala Tourism</title>
-</head>
-<body>
-    <header>
-        <nav>
-            <div class="logo"> <img src="image/1200px-Kerala_God's_Own_Country_Logo.svg.png" alt="">
-            </div>
-            <div class="Menu">'
-                <a href="#"> Explore Kerala! </a>
-                <a href="#"> Things to do </a>
-                <a href="#"> Plan your trip </a>
-                <a href="#"> Search </a>
-            </div>
 
-        </nav>
-    </header>
-    
-</body>
-</html>
+
+    function pyramid(N){
+       let string = "";
+        for(let i = 1 ; i <= N ; i++) {
+            for(j = N ; j > i ; j--) {
+                string += " ";
+            }
+            for(j = 1 ; j<= i ; j++) {
+                string += "*" + " ";
+            }
+            string += "\n";
+        }
+        return string;
+    }
+    console.log(pyramid(5));

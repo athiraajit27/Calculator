@@ -1,16 +1,107 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+	<meta charset="utf-8">
+	<title>
+		How to Change Background Color
+		of a Div on Mouse Move Over
+		using JavaScript ?
+	</title>
 
-    function pyramid(N){
-       let string = "";
-        for(let i = 1 ; i <= N ; i++) {
-            for(j = N ; j > i ; j--) {
-                string += " ";
-            }
-            for(j = 1 ; j<= i ; j++) {
-                string += "*" + " ";
-            }
-            string += "\n";
+	<style>
+		.boxclass {
+            /* background: red; */
+            border: black 1px solid;
+            width: 180px;
+            height: 180px;
+            margin: 0 auto;
+            margin-top: 0;
+            cursor: pointer;
+            display: inline-block;
+            float:left;
         }
-        return string;
-    }
-    console.log(pyramid(5));
+
+        .row {
+            display: block;
+            float:left;
+            width:100%;
+        }
+
+        #sss{
+
+            background: blue;
+        }
+	</style>
+</head>
+
+<body>
+    <div>
+        <div id="boxParent"></div>
+        <br>
+        <br>
+
+
+        <button id="clear">Reset</button>
+    </div>
+    
+
+	<script type="text/javascript">
+
+                function random_bg_color() {
+                    var x = Math.floor(Math.random() * 256);
+                    var y = Math.floor(Math.random() * 256);
+                    var z = Math.floor(Math.random() * 256);
+                    var color = "rgb(" + x + "," + y + "," + z + ")";
+                return color;
+                }
+                
+
+
+
+
+
+
+
+
+
+
+
+		
+            for (var i = 0; i < 3; i++) {
+                var row = document.createElement('div');
+                row.className = "row";
+                for (var j = 0; j < 3; j++) {
+                    var box = document.createElement('div');
+                    
+                    box.className = "boxclass";
+                    box.id= "sss"
+                    box.style.background= random_bg_color();
+                
+                    
+                    
+
+                    row.appendChild(box);
+                    
+
+                }                
+                document.getElementById('boxParent').appendChild(row);
+                
+            }
+
+
+document.getElementById("clear").addEventListener("click",reset)
+            function reset(){
+
+                
+                document.getElementsByClassName(boxclass).style.background= "white";
+
+            }
+
+        
+	</script>
+
+
+</body>
+
+</html>
